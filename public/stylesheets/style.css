@@ -1,10 +1,183 @@
+html, body {
+  height: 100%;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  font: 14px "Lato", Helvetica, Arial, sans-serif;
   background-color: black;
   color: white;
 }
 
 a {
   color: #00B7FF;
+}
+
+.trainSchedule {
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.trainSchedule__item {
+  box-sizing: border-box;
+  display: block;
+  margin-bottom: 2px;
+  padding: 20px 15px;
+  width: 100%;
+  height: 33%;
+  font-size: 24px;
+  line-height: 1em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+}
+
+.trainSchedule__item--onTime {
+  background-color: #34a802;
+}
+
+.trainSchedule__item--delays {
+  background-color: orange;
+}
+
+.trainSchedule__item--incident {
+  background-color: #d92e00;
+}
+
+.trainSchedule__item__info, .trainSchedule__item__visual {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.trainSchedule__item__fromName, .trainSchedule__item__toName {
+  display: block;
+  font-weight: bold;
+}
+
+.trainSchedule__item__toName:before {
+  content: "TO ";
+  font-weight: 300;
+}
+
+.trainSchedule__item__time {
+  display: block;
+}
+
+.trainSchedule__item__visual {
+  width: 145px; // Needed to keep centering on the right
+  margin-left: 15px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.trainSchedule__item__visual__desc {
+  display: block;
+  text-align: center;
+}
+
+
+/*
+*
+* Icons
+*
+*/
+
+.icon {
+  position: relative;
+  display: block;
+  border-radius: 50%;
+  background-color: #1c1c1c;
+}
+.icon svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+}
+.icon svg path {
+  stroke: #fff;
+}
+.icon .text {
+  font-weight: bold;
+  color: #fff;
+}
+.icon--verySmall {
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto 5px auto;
+}
+.icon--verySmall svg {
+  max-width: 15px;
+  max-height: 15px;
+}
+.icon--small {
+  padding: 0;
+  width: 45px;
+  height: 45px;
+  margin: 0 auto 10px auto;
+}
+.icon--small svg {
+  max-width: 25px;
+  max-height: 25px;
+}
+.icon--small .text {
+  font-size: 37px;
+  line-height: 44px;
+}
+.icon--large {
+  padding: 30px;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 20px auto;
+}
+.icon--large svg {
+  max-width: 180px;
+  max-height: 180px;
+}
+.icon--large svg path {
+  stroke: #fff;
+}
+.icon--large .text {
+  font-size: 210px;
+  line-height: 220px;
+}
+.icon--success {
+  background-color: #34a802;
+}
+.icon--success.icon--inverse {
+  background-color: #fff;
+}
+.icon--success.icon--inverse svg path {
+  stroke: #34a802;
+}
+.icon--success.icon--inverse .text {
+  color: #34a802;
+}
+.icon--warning {
+  background-color: orange;
+}
+.icon--warning.icon--inverse {
+  background-color: #fff;
+}
+.icon--warning.icon--inverse svg path {
+  stroke: orange;
+}
+.icon--warning.icon--inverse .text {
+  color: orange;
+}
+.icon--danger {
+  background-color: #d92e00;
+}
+.icon--danger.icon--inverse {
+  background-color: #fff;
+}
+.icon--danger.icon--inverse svg path {
+  stroke: #d92e00;
+}
+.icon--danger.icon--inverse .text {
+  color: #d92e00;
 }
