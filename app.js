@@ -6,6 +6,7 @@
 var express = require('express')
   , http = require('http')
   , path = require('path')
+  , getTrainTimes = require('./lib/get-train-times')
   , app = express()
 
 // all environments
@@ -25,8 +26,23 @@ if ('development' === app.get('env')) {
   app.use(express.errorHandler())
 }
 
+// Uncomment for testing purposes so that the spreadsheet gets loaded
+// when the app runs
+// getSpreadsheet(function (err, spreadsheet) {
+//   console.log(processSpreadsheet(spreadsheet));
+// })
+
 app.get('/', function (req, res) {
-  res.render('index', { title: 'Express' })
+  getTrainTimes(function (error, trains) {
+    if (error) {
+      console.error(error)
+      return res.send(500, { error: error })
+    }
+
+    console.log(trains)
+
+    res.render('index', { trains: trains })
+  })
 })
 
 http.createServer(app).listen(app.get('port'), function(){

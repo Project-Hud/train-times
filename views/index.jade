@@ -2,37 +2,48 @@ extends layout
 
 block content
   ul.trainSchedule
-    li.trainSchedule__item.trainSchedule__item--onTime
-      div.trainSchedule__item__info
-        span.trainSchedule__item__fromName Kings Langley
-        span.trainSchedule__item__toName Watford
-        time.trainSchedule__item__time 15:23
-      div.trainSchedule__item__visual
-        i.icon.icon--success.icon--small.icon--inverse
-          svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='100px', height='90px', viewbox='0 0 445 397', style='enable-background: new 0 0 445 397;', xml:space='preserve')
-            path(style='fill: none; stroke-width: 80; stroke-miterlimit: 10;', d='M27.495,222.246c0,0,57,50,97.098,103c0,0,144.41-183.505,292.902-293')
-        span.trainSchedule__item__visual__desc On Time
-    li.trainSchedule__item.trainSchedule__item--delays
-      div.trainSchedule__item__info
-        span.trainSchedule__item__fromName Kings Langley
-        span.trainSchedule__item__toName Watford
-        time.trainSchedule__item__time 15:23
-      div.trainSchedule__item__visual
-        i.icon.icon--warning.icon--small.icon--inverse
-          svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='100px', height='90px', viewbox='0 0 445 397', style='enable-background: new 0 0 445 397;', xml:space='preserve')
-            path(style='fill: none; stroke-width: 80; stroke-miterlimit: 10;', d='M27.495,222.246c0,0,57,50,97.098,103c0,0,144.41-183.505,292.902-293')
-        span.trainSchedule__item__visual__desc +5 MIN
-    li.trainSchedule__item.trainSchedule__item--incident
-      div.trainSchedule__item__info
-        span.trainSchedule__item__fromName Kings Langley
-        span.trainSchedule__item__toName Watford
-        time.trainSchedule__item__time 15:23
-      div.trainSchedule__item__visual
-        i.icon.icon--danger.icon--small.icon--inverse
-          svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='445px', height='397px', viewbox='0 0 445 397', style='enable-background: new 0 0 445 397;', xml:space='preserve')
-            g
-              path(style='fill: none; stroke-width: 80; stroke-miterlimit: 10;', d='M73.669,347.98c0,0,144.41-183.505,292.902-293')
-              path(style='fill: none; stroke-width: 80; stroke-miterlimit: 10;', d='M366.249,349.129c0,0-143.386-184.308-291.266-294.629')
-        span.trainSchedule__item__visual__desc INCIDENT
+    each train in trains.services
+      li.trainSchedule__item.trainSchedule__item--onTime
+        div.trainSchedule__item__info
+          span.trainSchedule__item__fromName Kings Langley
+          span.trainSchedule__item__toName #{train.destination}
+          time.trainSchedule__item__time #{train.departureTime}
+        div.trainSchedule__item__visual
+          i.icon.icon--success.icon--small.icon--inverse
+            svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='100px', height='90px', viewbox='0 0 445 397', style='enable-background: new 0 0 445 397;', xml:space='preserve')
+              path(style='fill: none; stroke-width: 80; stroke-miterlimit: 10;', d='M27.495,222.246c0,0,57,50,97.098,103c0,0,144.41-183.505,292.902-293')
+          span.trainSchedule__item__visual__desc #{train.availability}
+    //- li.trainSchedule__item.trainSchedule__item--onTime
+    //-   div.trainSchedule__item__info
+    //-     span.trainSchedule__item__fromName Kings Langley
+    //-     span.trainSchedule__item__toName Watford
+    //-     time.trainSchedule__item__time 15:23
+    //-   div.trainSchedule__item__visual
+    //-     i.icon.icon--success.icon--small.icon--inverse
+    //-       svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='100px', height='90px', viewbox='0 0 445 397', style='enable-background: new 0 0 445 397;', xml:space='preserve')
+    //-         path(style='fill: none; stroke-width: 80; stroke-miterlimit: 10;', d='M27.495,222.246c0,0,57,50,97.098,103c0,0,144.41-183.505,292.902-293')
+    //-     span.trainSchedule__item__visual__desc On Time
+    //- li.trainSchedule__item.trainSchedule__item--delays
+    //-   div.trainSchedule__item__info
+    //-     span.trainSchedule__item__fromName Kings Langley
+    //-     span.trainSchedule__item__toName Watford
+    //-     time.trainSchedule__item__time 15:23
+    //-   div.trainSchedule__item__visual
+    //-     i.icon.icon--warning.icon--small.icon--inverse
+    //-       svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='100px', height='90px', viewbox='0 0 445 397', style='enable-background: new 0 0 445 397;', xml:space='preserve')
+    //-         path(style='fill: none; stroke-width: 80; stroke-miterlimit: 10;', d='M27.495,222.246c0,0,57,50,97.098,103c0,0,144.41-183.505,292.902-293')
+    //-     span.trainSchedule__item__visual__desc +5 MIN
+    //- li.trainSchedule__item.trainSchedule__item--incident
+    //-   div.trainSchedule__item__info
+    //-     span.trainSchedule__item__fromName Kings Langley
+    //-     span.trainSchedule__item__toName Watford
+    //-     time.trainSchedule__item__time 15:23
+    //-   div.trainSchedule__item__visual
+    //-     i.icon.icon--danger.icon--small.icon--inverse
+    //-       svg(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='445px', height='397px', viewbox='0 0 445 397', style='enable-background: new 0 0 445 397;', xml:space='preserve')
+    //-         g
+    //-           path(style='fill: none; stroke-width: 80; stroke-miterlimit: 10;', d='M73.669,347.98c0,0,144.41-183.505,292.902-293')
+    //-           path(style='fill: none; stroke-width: 80; stroke-miterlimit: 10;', d='M366.249,349.129c0,0-143.386-184.308-291.266-294.629')
+    //-     span.trainSchedule__item__visual__desc INCIDENT
 
   script(src='/javascripts/index.js')
