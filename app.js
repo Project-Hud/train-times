@@ -39,8 +39,6 @@ app.get('/', function (req, res) {
       return res.send(500, { error: error })
     }
 
-    console.log(trains)
-
     res.render('index', { trains: trains })
   })
 })

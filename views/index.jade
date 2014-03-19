@@ -3,7 +3,7 @@ extends layout
 block content
   ul.trainSchedule
     each train in trains.services
-      li.trainSchedule__item.trainSchedule__item--onTime
+      li.trainSchedule__item(class=train.availability == 'On time' ? 'trainSchedule__item--onTime' : 'trainSchedule__item--delays')
         div.trainSchedule__item__info
           span.trainSchedule__item__fromName Kings Langley
           span.trainSchedule__item__toName #{train.destination}
