@@ -44,7 +44,8 @@ a{color:#00b7ff}
 .train-schedule{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;display:block;margin:0;padding:0}
 .train-schedule__item{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;display:block;padding:24px;padding:7vmin;width:100%;font-size:24px;font-size:7vmin;line-height:1em;color:#fff;text-align:center}
 .train-schedule__item--onTime{background-color:transparent}
-.train-schedule__item--delays{background-color:#6f4a01}
+.train-schedule__item--delays{background-color:#6f4a01;}
+.train-schedule__item--delays .train-schedule__time .train-schedule__info-block--bottom{font-size:5.3vmin}
 .train-schedule__item--incident{background-color:#6f0102}
 .train-schedule__info-block--top,.train-schedule__info-block--bottom,.train-schedule__info-block--middle{display:block;text-align:left}
 .train-schedule__info-block--middle{margin:5px 0;margin:1.5vmin 0}
