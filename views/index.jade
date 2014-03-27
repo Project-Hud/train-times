@@ -14,6 +14,6 @@ block content
 					.train-schedule__time
 						time.train-schedule__info-block--top #{train.departureTime}
 						span.train-schedule__info-block--middle -
-						span.train-schedule__info-block--bottom #{train.availability}
+						span.train-schedule__info-block--bottom!= train.availability
 
 	script(src='/javascripts/index.js')
